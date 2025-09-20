@@ -1,28 +1,30 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Hoặc "master" tùy theo tên nhánh chính của bạn
+    branches:
+      - main  # hoặc tên nhánh bạn đang sử dụng
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        run: |
-          npm install
-          npm run build
-        env:
-          # Truyền API Key từ GitHub Secret vào quá trình build
-          API_KEY: ${{ secrets.API_KEY }}
-          # Cần đảm bảo công cụ build của bạn (Vite/Webpack) được cấu hình
-          # để thay thế `process.env.API_KEY` bằng giá trị này.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-      - name: Deploy 🚀
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Hoặc "./build" nếu bạn dùng Create React App
+          publish_dir: ./dist
