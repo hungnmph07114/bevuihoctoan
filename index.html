@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bé Yêu Học Toán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'scale-up': 'scaleUp 0.3s ease-out',
+              'float-up': 'floatUp linear infinite',
+              'spin-slow': 'spin 20s linear infinite',
+              'spin-medium': 'spin 10s linear infinite reverse',
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-out': 'fadeInOut 5s ease-in-out infinite',
+              'slide-in-up': 'slideInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              'slide-out-down': 'slideOutDown 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)',
+              'slide-in-right': 'slideInRight 0.4s ease-out',
+              'slide-out-left': 'slideOutLeft 0.4s ease-in',
+              'combo-pump': 'comboPump 0.3s ease-in-out',
+              'bonus-pop': 'bonusPop 0.8s ease-out forwards',
+              'draw-path': 'drawPath 1s ease-in-out forwards',
+              'pulse-glow': 'pulseGlow 2s infinite ease-in-out',
+              'subtle-float': 'subtleFloat 20s ease-in-out infinite alternate',
+              'mission-pulse': 'missionPulse 2s infinite ease-in-out',
+              'drift': 'drift 40s linear infinite alternate',
+              'waterfall-flow': 'waterfallFlow 2s ease-in-out infinite',
+              'crystal-glow': 'crystalGlow 2.5s infinite ease-in-out',
+              'pawn-bob': 'pawnBob 3s infinite ease-in-out',
+              'gentle-pulse': 'gentlePulse 2.5s infinite ease-in-out',
+              'symbol-pulse': 'symbolPulse 2.5s infinite ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              scaleUp: {
+                '0%': { transform: 'scale(0.9)', opacity: 0 },
+                '100%': { transform: 'scale(1)', opacity: 1 },
+              },
+              floatUp: {
+                '0%': { transform: 'translateY(0)', opacity: 1 },
+                '100%': { transform: 'translateY(-100vh)', opacity: 0 },
+              },
+              spin: {
+                'from': { transform: 'rotate(0deg)' },
+                'to': { transform: 'rotate(360deg)' },
+              },
+              float: {
+                '0%': { transform: 'translateY(0px) rotate(0deg)' },
+                '50%': { transform: 'translateY(-20px) rotate(10deg)' },
+                '100%': { transform: 'translateY(0px) rotate(0deg)' },
+              },
+              fadeInOut: {
+                  '0%, 100%': { opacity: 0.1 },
+                  '50%': { opacity: 0.5 },
+              },
+              slideInUp: {
+                'from': { transform: 'translateY(100%)', opacity: 0 },
+                'to': { transform: 'translateY(0)', opacity: 1 },
+              },
+              slideOutDown: {
+                'from': { transform: 'translateY(0)', opacity: 1 },
+                'to': { transform: 'translateY(100%)', opacity: 0 },
+              },
+              slideInRight: {
+                  'from': { transform: 'translateX(100%)', opacity: 0 },
+                  'to': { transform: 'translateX(0)', opacity: 1 },
+              },
+              slideOutLeft: {
+                  'from': { transform: 'translateX(0)', opacity: 1 },
+                  'to': { transform: 'translateX(-100%)', opacity: 0 },
+              },
+              comboPump: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.25)' },
+              },
+              bonusPop: {
+                '0%': { transform: 'translateY(0) scale(0.8)', opacity: 1 },
+                '100%': { transform: 'translateY(-30px) scale(1.2)', opacity: 0 },
+              },
+              drawPath: {
+                'from': { 'stroke-dashoffset': 1000 },
+                'to': { 'stroke-dashoffset': 0 },
+              },
+              pulseGlow: {
+                '0%, 100%': { filter: 'drop-shadow(0 0 5px rgba(255, 255, 100, 0.7))' },
+                '50%': { filter: 'drop-shadow(0 0 15px rgba(255, 255, 100, 1))' },
+              },
+              subtleFloat: {
+                'from': { transform: 'translateX(-15px)' },
+                'to': { transform: 'translateX(15px)' },
+              },
+              missionPulse: {
+                '0%, 100%': {
+                  transform: 'scale(1) rotate(0deg)',
+                  backgroundColor: '#f43f5e',
+                  boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+                },
+                '50%': {
+                  transform: 'scale(1.05) rotate(0deg)',
+                  backgroundColor: '#fbbf24',
+                  boxShadow: '0 0 20px #fbbf24, 0 0 30px #fbbf24'
+                },
+                '25%': {
+                  transform: 'scale(1.02) rotate(-1deg)',
+                },
+                '75%': {
+                  transform: 'scale(1.02) rotate(1deg)',
+                },
+              },
+              drift: {
+                  '0%': { transform: 'translateX(-20px)' },
+                  '100%': { transform: 'translateX(20px)' },
+              },
+              waterfallFlow: {
+                '0%': { transform: 'translateY(-20px)', opacity: '0.5' },
+                '100%': { transform: 'translateY(120px)', opacity: '0' },
+              },
+              crystalGlow: {
+                '0%, 100%': { filter: 'drop-shadow(0 0 4px #a7d8ff)' },
+                '50%': { filter: 'drop-shadow(0 0 12px #a7d8ff)' },
+              },
+              pawnBob: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-5px)' },
+              },
+              gentlePulse: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.025)' },
+              },
+              symbolPulse: {
+                '0%, 100%': { opacity: 0, transform: 'scale(0.8)' },
+                '50%': { opacity: 1, transform: 'scale(1.1)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
+    "react/": "https://aistudiocdn.com/react@^18.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

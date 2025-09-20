@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Bé Yêu Học Toán",
+  "description": "Một ứng dụng học toán vui nhộn cho trẻ em tiểu học, sử dụng Gemini API để tạo ra các thử thách toán học hấp dẫn. Bé có thể làm bài kiểm tra, tăng cấp độ và sưu tầm huy hiệu.",
+  "requestFramePermissions": []
+}
